@@ -1,8 +1,8 @@
 # Leetcode
 Experiences in the my life of Leetcode : )
 
-I created this repository to share my solution for leetcode questions,
-In addition, I'll add how I was thinking when resolving the problem, and also add some simple test cases for reference.
-In case you have any questions, please don't hesitate to contact me via mails.
+I created this repository to share my solution for leetcode questions,  
+In addition, I'll add how I was thinking when resolving the problem, and also add some simple test cases for reference.  
+In case you have any questions, please don't hesitate to contact me via mails.  
 My e-mail address: xupubit@163.com
 
