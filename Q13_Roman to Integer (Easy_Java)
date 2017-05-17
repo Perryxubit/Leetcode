@@ -10,7 +10,7 @@ public class Solution {
 				num -= curNum;
 			else if(nextnum <= curNum) // next <= cur, using +
 				num += curNum;
-		}
+		} 
 		return num;
     }
 	
