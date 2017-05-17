@@ -1,6 +1,6 @@
 public class Solution {
     public String intToRoman(int num) {
-         	// 1 - 3999
+        // 1 - 3999
 		String[] ge_str = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};   // 1-10
 		String[] shi_str = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC", "C"};   // 10 - 100
 		String[] bai_str = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM", "M"};  // 100 - 1000
