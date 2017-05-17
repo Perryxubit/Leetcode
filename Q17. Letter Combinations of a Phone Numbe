@@ -20,31 +20,34 @@
 public class Solution {
     public List<String> letterCombinations(String digits) {
         List<String> array = new ArrayList<>();
-        int N = (int)Math.pow(4, digits.length());
+        if(digits.length() == 0) return array; //empty
         String[] key = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-        Queue<String> queue = new LinkedList<>();
+        for(int i=0; i<digits.length(); i++)
+        	if(!Character.isDigit(digits.charAt(i)) || digits.charAt(i) == '0' || digits.charAt(i) == '1')
+        		return array;
         
-        if(digits.length() <= 0) return array;
+        //statement of Q: queue
+        Queue<String> queue = new LinkedList<>();
         int firstNum = Integer.parseInt(digits.charAt(0)+"");
-        //initial: store first 3-4 number in queue
+        //initialize Q: store first 3-4 numbers in queue
         for(int i=0; i<key[firstNum].length(); i++) 
         	queue.offer(key[firstNum].charAt(i) + "");
         
         for(int i=1; i<digits.length(); i++) {
         	int index = Integer.parseInt(digits.charAt(i) + "");
-        	while(queue.element().length() == i) { // get first i number
+        	while(queue.element().length() == i) { // get all numbers whose length is i
         		String oldstr = queue.poll();
         		// for number 1 2 3 4 5 6 8
         		queue.offer(oldstr + key[index].charAt(0));
         		queue.offer(oldstr + key[index].charAt(1));
         		queue.offer(oldstr + key[index].charAt(2));
-        		if(key[index].length() == 4) { // for number 7 9
+        		if(key[index].length() == 4) { 
+        			// for number 7 9
         			queue.offer(oldstr + key[index].charAt(3));
         		}
         	}
         }
-        //get longest one
-        while(queue.size() > 0) {
+        while(queue.size() > 0) { //put entries from queue to array
         	array.add(queue.poll());
         }
         return array;
