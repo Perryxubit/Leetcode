@@ -19,6 +19,14 @@ public class Solution {
 			int P = nums[i], left=i+1, right=nums.length-1;
 			if(i-1>=0 && nums[i] == nums[i-1]) continue; // if the number is the same as last one, then pass
 			while(left < right) {
+				if(left == i) { // pass if left = i
+					left++;
+					continue;
+				}
+				if(right == i) { // pass if right = i
+					right--;
+					continue;
+				}
 				// for each nums[i], using left/right to search from both head and tail
 				if(nums[left] + nums[right] + P == 0) { //if the sum is equal to 0, then add to list
 					//add into list
