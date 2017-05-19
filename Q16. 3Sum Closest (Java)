@@ -9,7 +9,7 @@
 
 public class Solution {
     public int threeSumClosest(int[] nums, int target) {
-        Arrays.sort(nums); // sort from small to large
+        	Arrays.sort(nums); // sort from small to large
 		int delta = Integer.MAX_VALUE, closest = -1;
         	for(int i=0; i<nums.length; i++) {
 			int P = nums[i], left = i+1, right = nums.length-1;
