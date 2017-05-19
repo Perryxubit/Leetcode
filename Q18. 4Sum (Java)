@@ -10,14 +10,15 @@
 */
 public class Solution {
     public List<List<Integer>> fourSum(int[] nums, int target) {
-        Arrays.sort(nums); // sort from small to large
+                Arrays.sort(nums); // sort from small to large
 		List<List<Integer>> list = new ArrayList<List<Integer>>();
-		HashSet<String> set = new HashSet<String>();
 		//time complexity: O(N^3)
-		for(int i=0; nums.length>=4 && i<nums.length; i++) {
+		for(int i=0; nums.length>=4 && i<nums.length-3; i++) {
 			int P = nums[i];
-			for(int j=i+1; j<nums.length; j++) {
+			if(i>0 && nums[i-1] == nums[i]) continue; //P cannot be repeated (only if i > 0, it is P)
+			for(int j=i+1; j<nums.length-2; j++) {
 				int Q = nums[j];
+				if(j>i+1 && nums[j-1] == nums[j]) continue; // Q cannot be repeated (only is j> i+1, it is Q)
 				int left = j+1, right = nums.length-1;
 				while(left < right) {
 					if(left == i || left == j) {
@@ -30,19 +31,14 @@ public class Solution {
 					}
 					//check the current SUM:
 					if(nums[left] + nums[right] + P + Q == target) { // sum is target, store in list:
-						String set_str = nums[left]+"#"+nums[right]+"#"+P+"#"+Q;
-						if(!set.contains(set_str)) {
-							set.add(set_str);
-							List<Integer> group = new ArrayList<Integer>();
-							group.add(P);
-							group.add(Q);
-							group.add(nums[left]);
-							group.add(nums[right]);
-							list.add(group);
-//							System.out.println(P + " " + Q);
-							while(left<right && left+1<nums.length && nums[left] == nums[left+1]) left++; //pass same number from right
-							while(left<right && right-1>=0 && nums[right] == nums[right-1]) right--; //pass same number from left
-						}
+						List<Integer> group = new ArrayList<Integer>();
+						group.add(P);
+						group.add(Q);
+						group.add(nums[left]);
+						group.add(nums[right]);
+						list.add(group);
+						while(left<right && left+1<nums.length && nums[left] == nums[left+1]) left++; //pass same number from right
+						while(left<right && right-1>=0 && nums[right] == nums[right-1]) right--; //pass same number from left
 						left++;
 						right--;	
 					}
@@ -53,7 +49,6 @@ public class Solution {
 				}
 			}
 		}
-		
     	return list;
     }
 }
