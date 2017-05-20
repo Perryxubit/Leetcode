@@ -1,7 +1,12 @@
+/*
+	这次是罗马数字转整数
+	根据罗马数字规则，我们只需要诸位替换即可，
+	注意如果遇到s[i+1] > s[i]的情况则表示当前i位置的数字是左减状态，需要减s[i]，其余时候为加s[i]
+*/
+
 public class Solution {
     public int romanToInt(String s) {
 		if(s.length() == 0) return 0;
-		
 		int num=0, nextnum=0;
 		for(int i=0; i<s.length(); i++) {
 			int curNum = romanNum(s.charAt(i));
