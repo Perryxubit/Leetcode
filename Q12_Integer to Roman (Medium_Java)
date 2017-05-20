@@ -1,3 +1,11 @@
+/*
+	整数转罗马数字，规则为：
+	I=1，V=5，X=10，L=50，C=100，D=500，M=1000;
+	相同的罗马数字最多不能超过三个;
+	左减右加。(即IV为4，VI为6)
+	参考网上的思路，我用的比较笨的方法..如代码所示
+*/
+
 public class Solution {
     public String intToRoman(int num) {
         // 1 - 3999
