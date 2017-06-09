@@ -1,0 +1,32 @@
+/*
+    本题目要求模拟pow函数，即求M的N次方。
+    要注意N可能是负数...
+    用O(N)方法的话会TLE...所以只能用O(logN)的方法了。
+    递归得N分成两份，然后依次相乘得到结果。
+    
+    此外，同理可以把N分成多份，可能更快一些。
+    
+*/
+
+public class Solution {
+   public double myPow(double x, int n) {
+		int m = Math.abs(n);
+		double rev = recursion(x, m);
+		
+		if(n<0) rev = 1.0/rev;
+        return rev;
+    }
+	public double recursion(double x, int m) {
+		if(m == 0) return 1;
+		else if(m == 1) return x;
+		
+		double r = recursion(x, m/2);
+		if(m%2 == 0) { //even number
+			return r*r;
+		}
+		else { //odd number
+			return r*r*x;
+		}
+	}
+}
+
