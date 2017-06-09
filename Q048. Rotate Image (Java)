@@ -1,0 +1,30 @@
+/*
+    矩阵旋转问题, 第一种方法就是直接新建矩阵把每一个数字放进去，见我的rotate函数所示。
+    但是题目要求用数字替换的方式，不能申请额外空间，这其实是个线性代数问题...查了一下翻转方法，对矩阵翻转问题是有共同解的：
+    - 对于逆时针翻转， 我们先把每一行数字左右反转，然后再对矩阵进行对角反转即可。
+    1 2 3        3 2 1       3 6 9
+    4 5 6   ->   6 5 4   ->  2 5 8
+    7 8 9        9 8 7       1 4 7
+    - 对于逆时针翻转， 我们先把每一行数字左右反转，然后再对矩阵进行对角反转即可。
+    1 2 3        3 2 1       3 6 9
+    4 5 6   ->   6 5 4   ->  2 5 8
+    7 8 9        9 8 7       1 4 7
+    
+
+*/
+
+public class Solution {
+    public void rotate(int[][] matrix) {
+		int N = matrix.length;
+        int[][] newmatrix = new int[N][N];
+        for(int i=0; i<N; i++) {
+        	for(int j=0; j<N; j++) {
+        		newmatrix[j][N-i-1] = matrix[i][j];
+        	}
+        }
+        for(int i=0; i<N; i++) {
+			for(int j=0; j<N; j++)
+				matrix[i][j] = newmatrix[i][j];
+		}
+    }
+}
