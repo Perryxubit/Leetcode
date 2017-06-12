@@ -13,7 +13,6 @@
 */
 
 public class Solution {
-
     public int[] twoSum_1(int[] nums, int target) {
         int[] rev = new int[2];
         //Time Complexity: O(N^2)
@@ -28,6 +27,7 @@ public class Solution {
         }
         return rev;
     }
+	
     public int[] twoSum_2(int[] nums, int target) {
         int[] rev = new int[2];
         int left = 0, right = nums.length-1;
