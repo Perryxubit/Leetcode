@@ -1,14 +1,14 @@
 /**
-  Definition for singly-linked list.
-  public class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
-  }
+	  Definition for singly-linked list.
+	  public class ListNode {
+      	int val;
+     	ListNode next;
+      	ListNode(int x) { val = x; }
+	  }
   
-  本题用链表实现2个非负数相加，本质是链表实现的高精度加法...
-  代码实现如下，需要注意：两个输入链表的长度可能不能，所以在逐位相加之后，要将剩余的输入链表连入结果
-  同时还需要注意的是各种情况下相加进位的情况，本程序用flag来标记是否进位。
+  	本题用链表实现2个非负数相加，本质是链表实现的高精度加法...
+  	代码实现如下，需要注意：两个输入链表的长度可能不能，所以在逐位相加之后，要将剩余的输入链表连入结果
+  	同时还需要注意的是各种情况下相加进位的情况，本程序用flag来标记是否进位。
   
  */
  
