@@ -6,6 +6,7 @@
 */
 
 public class Solution {
+	//using Q051 solution to pass this question...
     public int totalNQueens(int n) {
 		int[] solution = new int[1];
 		String[][] queens = new String[n][n];
