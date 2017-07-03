@@ -1,4 +1,4 @@
-Qestions 051 - 1000 of leetcode.
+Qestions 051 - 100 of leetcode.
 Language: Java
 
 leetcode link:
