@@ -9,6 +9,6 @@ My e-mail address: xupubit@163.com
 
 
 Perry's Brilliant Solution:
-37. Sudoku Solver		(Hard)  
+37. Sudoku Solver		(Hard)  <br>
 51. N-Queens			(Hard)  
 56. Merge Intervals 	(Medium)
