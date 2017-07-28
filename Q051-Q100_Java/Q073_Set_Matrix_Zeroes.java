@@ -10,8 +10,8 @@
     判断了... 具体方法详见下文的public void setZeroes2(int[][] matrix)函数。
 
 */
-
-public void setZeroes(int[][] matrix) {
+public class Solution {
+	public void setZeroes(int[][] matrix) {
 		//Space: O(m+n)
 		HashSet<Integer> row = new HashSet<Integer>();
 		HashSet<Integer> column = new HashSet<Integer>();
@@ -32,7 +32,7 @@ public void setZeroes(int[][] matrix) {
 		}
     }
 	
-public void setZeroes2(int[][] matrix) {
+	public void setZeroes2(int[][] matrix) {
 		//space: O(1)
 		//use first column and row to mark the zeros!
 		boolean firstRow_0 = false, firstColumn_0 = false;
@@ -62,3 +62,4 @@ public void setZeroes2(int[][] matrix) {
 		if(firstColumn_0 == true)
 			for(int i=0; i<matrix.length; i++) matrix[i][0] = 0;
     }
+}
